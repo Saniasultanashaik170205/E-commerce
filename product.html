@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    function addToCart(productName, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existing = cart.find(item => item.name === productName);
+
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({ name: productName, price: price, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        //alert(productName + " added to cart!");
+    }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Kitchen | Products</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="logo">
+            </a>
+        </div>
+
+        <!-- Centered Heading -->
+        <div class="heading">
+            <h1>KitchenKart</h1>
+        </div>
+
+        <div class="links">
+            <ul>
+                <li><input type="text" id="searchBar" placeholder="Search utensils..." onkeyup="searchItems()"></li>
+                <li><a href="cart.html">Go to Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h1>Our Products</h1>
+        <div class="product">
+            <div class="prod-container">
+                <img class="prod-img" src="images/blender.jpg" alt="Blender">
+                <div class="prod-name">Blender</div>
+                <div class="prod-price">Rs.4,399</div>
+                <div class="buy"><button onclick="addToCart('Blender', 4399,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/board.webp" alt="Cutting Board">
+                <div class="prod-name">Cutting Board</div>
+                <div class="prod-price">Rs.399</div>
+                <div class="buy"><button onclick="addToCart('Cutting Board', 399,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/bowls.jpeg" alt="Bowls">
+                <div class="prod-name">Bowls</div>
+                <div class="prod-price">Rs.1,100</div>
+                <div class="buy"><button onclick="addToCart('Bowls', 1100,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/cookware.jpeg" alt="Cookware">
+                <div class="prod-name">Cookware</div>
+                <div class="prod-price">Rs.3,299</div>
+                <div class="buy"><button onclick="addToCart('Cookware', 3299,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/cutlery.jpeg" alt="Cutlery">
+                <div class="prod-name">Cutlery</div>
+                <div class="prod-price">Rs.759</div>
+                <div class="buy"><button onclick="addToCart('Cutlery', 759,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/dish rack.jpeg" alt="Dish Rack">
+                <div class="prod-name">Dish Rack</div>
+                <div class="prod-price">Rs.1,899</div>
+                <div class="buy"><button onclick="addToCart('Dish Rack', 1899,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/glass.jpg" alt="Glass">
+                <div class="prod-name">Glass</div>
+                <div class="prod-price">Rs.999</div>
+                <div class="buy"><button onclick="addToCart('Glass', 999,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/grater.jpeg" alt="Grater">
+                <div class="prod-name">Grater</div>
+                <div class="prod-price">Rs.797</div>
+                <div class="buy"><button onclick="addToCart('Grater', 797,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/knife.jpeg" alt="Knife">
+                <div class="prod-name">Knife</div>
+                <div class="prod-price">Rs.1,799</div>
+                <div class="buy"><button onclick="addToCart('Knife', 1799,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/plate.jpeg" alt="Plates">
+                <div class="prod-name">Plates</div>
+                <div class="prod-price">Rs.382</div>
+                <div class="buy"><button onclick="addToCart('Plates', 382,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/strainer.jpeg" alt="Strainer">
+                <div class="prod-name">Strainer</div>
+                <div class="prod-price">Rs.1,099</div>
+                <div class="buy"><button onclick="addToCart('Strainer', 1099,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/teapot.jpeg" alt="Teapot">
+                <div class="prod-name">Teapot</div>
+                <div class="prod-price">Rs.999</div>
+                <div class="buy"><button onclick="addToCart('Teapot', 999,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/toaster.jpg" alt="Toaster">
+                <div class="prod-name">Toaster</div>
+                <div class="prod-price">Rs.3,256</div>
+                <div class="buy"><button onclick="addToCart('Toaster', 3256,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/whisk.jpeg" alt="Whisk">
+                <div class="prod-name">Whisk</div>
+                <div class="prod-price">Rs.105</div>
+                <div class="buy"><button onclick="addToCart('Whisk', 105,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/cups.jpeg" alt="Measurement Cups">
+                <div class="prod-name">Measurement Cups</div>
+                <div class="prod-price">Rs.650</div>
+                <div class="buy"><button onclick="addToCart('Measurement Cups', 650,this)">Add to Cart</button></div>
+            </div>
+        </div>
+    </main>
+    
+
+
+    <footer>
+        <p>&copy; 2025 Our Kitchen. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+function addToCart(productName, price, buttonElement) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existing = cart.find(item => item.name === productName);
+
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ name: productName, price: price, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Change button text and disable it
+    buttonElement.textContent = "Added to Cart";
+    buttonElement.disabled = true;
+    buttonElement.style.backgroundColor = "#999";
+}
+</script>
+
+
+</body>
+</html>

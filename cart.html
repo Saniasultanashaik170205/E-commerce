@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KitchenKart - Cart</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #f44336;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .cart-container {
+        max-width: 800px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .item-info {
+        flex: 1;
+    }
+    .quantity-buttons {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .quantity-buttons button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .quantity-buttons button:hover {
+        background-color: #d32f2f;
+    }
+    .total {
+        font-weight: bold;
+        text-align: right;
+        margin-top: 20px;
+    }
+    .cart-container > button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        float: right;
+        margin-left: 10px;
+    }
+</style>
+
+</head>
+<body>
+    <header>KitchenKart - Your Cart</header>
+
+    <div class="cart-container">
+        <h2>Items in Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <div class="total">Total: ₹<span id="totalPrice">0</span></div>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
+
